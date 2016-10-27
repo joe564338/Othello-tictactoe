@@ -38,8 +38,8 @@ void OthelloBoard::ApplyMove(GameMove *move){
 		for (int i = 0; i < 8; i++) {
 			tRow = othermove->mRow + array[i * 2];
 			tCol = othermove->mCol + array[i * 2 + 1];
-			char dRow = array[i * 2];
-			char dCol = array[i * 2 + 1];
+			char dRow = (char) array[i * 2];
+			char dCol = (char) array[i * 2 + 1];
 			int enemyCount = 0;
 			bool endOfBound = false;
 				while (mBoard[tRow][tCol] != 0 && InBounds(tRow, tCol)
@@ -62,7 +62,7 @@ void OthelloBoard::ApplyMove(GameMove *move){
 				for (int cou = 0; cou < enemyCount && endOfBound; cou++) {
 					tRow = tRow - array[i * 2];
 					tCol = tCol - array[i * 2 + 1];
-					mBoard[othermove->mRow][othermove->mCol] = mNextPlayer;
+					mBoard[othermove->mRow][othermove->mCol] = (char) mNextPlayer;
 					if (mBoard[tRow][tCol] != mNextPlayer) {
 						mBoard[tRow][tCol] = mBoard[tRow][tCol] * -1;
 						mValue += mNextPlayer * 2;
@@ -81,7 +81,7 @@ void OthelloBoard::GetPossibleMoves(std::vector<GameMove *> *list) const{
 	for (int k = 0; k < BOARD_SIZE; ++k) {
 		for (int j = 0; j < BOARD_SIZE; ++j) {
 			bool endOfBound = false;
-			bool goodMove = false;
+			
 			for (int i = 0; i < 8; i++) {
 				tRow = k + array[i * 2];
 				tCol = j + array[i * 2 + 1];

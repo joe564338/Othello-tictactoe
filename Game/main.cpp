@@ -16,7 +16,7 @@
 using namespace std;
 
 
-int main(int argc, char* argv[]) {
+int main() {
 	const int NUM_SUB_6 = 6;
 	const int NUM_SUB_8 = 8;
 	cout << "Which game do you want to play?" << endl;
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 	string userInput; // a string to hold the user's command choice
 	vector<GameMove *> possMoves; // a holder for possible moves
 	int NUM_SUB_5 = 5;
-	int NUM_SUB_4 = 4;
+	unsigned int NUM_SUB_4 = 4;
 	do {
 		   possMoves.clear();
 		   cout << *view << endl;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 			   cout << (string)**i << " ";
 		   }
 		   cout << endl;
-			   cout << board->GetPlayerString(board->GetNextPlayer()) << " TURN" << endl;
+		   cout << board->GetPlayerString(board->GetNextPlayer()) << " TURN" << endl;
 		   cout << "input command" << endl;
 		   cout << "command loop:" << endl;
 		   cout << "move (r,c)" << endl;

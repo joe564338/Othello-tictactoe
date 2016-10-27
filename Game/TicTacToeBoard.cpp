@@ -14,7 +14,7 @@ TicTacToeBoard::TicTacToeBoard() : GameBoard(), mBoard(){
 };
 void TicTacToeBoard::ApplyMove(GameMove *move){
 	TicTacToeMove *othermove = (TicTacToeMove *)move;
-	mBoard[othermove->mRow][othermove->mCol] = mNextPlayer;
+	mBoard[othermove->mRow][othermove->mCol] = (char) mNextPlayer;
 	mNextPlayer = mNextPlayer * -1;
 	mHistory.push_back(othermove);
 	int delRow[3] = { 0, 1, 2 };

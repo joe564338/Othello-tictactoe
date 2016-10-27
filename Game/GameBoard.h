@@ -49,7 +49,7 @@ public:
    this should be "Black" or "White", but this can be customized, e.g. for 
    Tic-Tac-Toe.
    */
-   virtual std::string GetPlayerString(char player) {
+   virtual std::string GetPlayerString(int player) {
       return (player == 1 ? "Black" : "White");
    }
 
@@ -69,7 +69,7 @@ public:
    }
 
 protected:
-   char mNextPlayer;
+   int mNextPlayer;
    int mValue;
    std::vector<GameMove *> mHistory;
 };

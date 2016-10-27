@@ -17,7 +17,7 @@ public:
 		std::cout << "operator new: " << mOutstanding << " moves outstanding" << std::endl;
 		return ::operator new(sz);
 	}
-	static void operator delete(void* ptr, std::size_t sz) {
+	static void operator delete(void* ptr, std::size_t) {
 		mOutstanding--;
 		std::cout << "operator delete: " << mOutstanding << " moves oustanding" << std::endl;
 		::operator delete(ptr);
