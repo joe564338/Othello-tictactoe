@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
 				   }
 			   }
 			   else if (userInput == "quit"){
-				   exit;
+				   exit(0);
 			   }
 			   else{
 				   cout << "bad" << endl;

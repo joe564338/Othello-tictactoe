@@ -13,7 +13,7 @@ OthelloMove::OthelloMove(const OthelloMove &other) : mRow(other.mRow),
 OthelloMove& OthelloMove::operator=(const OthelloMove& other){
 	mRow = other.mRow;
 	mCol = other.mCol;
-	return OthelloMove(mRow, mCol);
+	return *this;
 }
 bool OthelloMove::Equals(const GameMove &other) const{
 	OthelloMove &othermove = (OthelloMove &)other;
